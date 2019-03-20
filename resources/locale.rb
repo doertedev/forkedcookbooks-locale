@@ -49,7 +49,7 @@ action :update do
     end
 
     execute "reload root's lang profile script" do
-      command 'source source /etc/sysconfig/i18n; source /etc/profile.d/lang.sh'
+      command 'source /etc/sysconfig/i18n; source /etc/profile.d/lang.sh'
       not_if { updated }
     end
   elsif ::File.exist?('/usr/sbin/update-locale')
